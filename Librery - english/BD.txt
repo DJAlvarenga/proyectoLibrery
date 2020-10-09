@@ -1,0 +1,39 @@
+Base de Datos Library
+
+Tablas
+- usuarios
+	- estudiantes
+	- bibliotecario
+	- Administrador
+- libros
+	- categorias
+	
+- Resevacion
+
+
+
+Tabla LIB.Uarios
+- LIB.IDUSRIO 01 INFORMATICA
+- LIB.NOMBRE
+- LIB.APELLIDO
+- LIB.TIPODEUSUARIO
+
+
+tabla Categoria
+- LIB.IDCATEGORIA
+- LIB.NOMCATEGORIA
+
+
+TABLA LIBROS
+- IDLIBRO				SLECT*(COUNT) FROM LIBROS AND CAT_CREADPRPOR;   100
+- NOMBRELIBRO
+- ESCRITOR
+- EDICION
+- ESTADO
+- IDCATEGORIA FK
+- CAT_CREADPRPOR
+- FECHACRADO
+- ACTUALIZDOPOR
+- FECHAACTTULIZOADO
+
+WIZAED
