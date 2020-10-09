@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es">
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script><script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<title>Registro de libros</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="title" content="Proyecta Bit - Formulario y foto"/>
+    <meta name="description" content="Video tutorial de captura de foto por camara y registro de datos en base de datos"/>
+    <meta name="author" content="Proyecta Bit - Luis Centeno"/>
+    <link rel="stylesheet" href="custom/css/bootstrap.min.css">
+	<link rel="stylesheet" href="custom/css/sweetalert.css">
+	<link rel="stylesheet" href="custom/css/custom.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">Librery</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/Librery">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Libros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Librery/camara/registrar.html">Prestar un libro</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <a href="/Librery/login/login.php">Iniciar sesion</a>
+    </form>
+  </div>
+</nav>
+
+	<div class="container">
+		<div class="row-fluid">
+			<h1 class="text-center mt-3">Registro de libros</h1>
+			<form id="frm_foto">
+				<div class="col-lg-12">
+					<p>Bienvenidos al registro de libros, por favor ingresar los libors correctamente ya que estos serán guardados en el sistema, para su posterior consulta.</p>
+					<a class="btn btn-info btn-sm float-left" type="button" href="lista.html">Listado</a><br><br>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group row">
+		    					<label for="titulo" class="col-sm-3 col-form-label">Titulo:</label>
+		    					<div class="col-sm-9"><input type="text" class="form-control form-control-sm" id="titulo" name="titulo"></div>
+		  					</div>
+		  					<div class="form-group row">
+		  						<label for="autor" class="col-sm-3 col-form-label">Autor:</label>
+		  						<div class="col-sm-9"><input type="text" class="form-control form-control-sm" id="autor" name="autor"></div>
+		  					</div>
+							<div class="form-group row">
+		    					<label for="publicacion" class="col-sm-3 col-form-label">Fecha de lanzamiento:</label>
+		    					<div class="col-sm-9"><input type="date" class="form-control form-control-sm" id="publicacion" name="publicacion"></div>
+		  					</div>
+		  					<div class="form-group row">
+		  						<label for="genero" class="col-sm-3 col-form-label">Genero principal:</label>
+		  						<div class="col-sm-9">
+		  							<select class="form-control form-control-sm" id="genero" name="genero">
+		  								<option value="0">Otro...</option>
+		  								<option value="1">Femenino</option>
+		  								<option value="2">Masculino</option>
+		  							</select>
+		  						</div>
+		  					</div>
+		  					<div class="form-group row">
+		    					<label for="descripcion" class="col-sm-3 col-form-label">Detalle:</label>
+		    					<div class="col-sm-9"><textarea id="descripcion" class="form-control" rows="3" name="descripcion"></textarea></div>
+		  					</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="container_radio">
+								<label for="foto" class="col-sm-3 col-form-label">Foto:</label>
+								<input type="file" class="form-control-file video_container" name="archivo" id="subirfoto" accept="image/*">
+								<video id="video" autoplay="autoplay" class="video_container none"></video>
+							</div>
+						</div>
+						<button class="btn btn-primary btn-sm" type="submit" id="btn_save">Guardar</button>
+					</div>
+					<canvas id="canvas" class="none"></canvas>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script src="custom/js/jquery.min.js"></script>
+    <script src="custom/js/bootstrap.min.js"></script>
+    <script src="custom/js/sweetalert.js"></script>
+	<script src="custom/app/camara.js"></script>
+	<script src="custom/app/inserta.js"></script>
+</body>
+</html>
